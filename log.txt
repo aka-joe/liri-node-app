@@ -1,3 +1,5 @@
+node liri.js spotify-this-song
+
 
 --------------------------------------------------------------
 
@@ -7,7 +9,9 @@ Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
 Album  : The Sign (US Album) [Remastered]
 
 --------------------------------------------------------------
-C:\Program Files\nodejs\node.exe C:\Users\Joseph\Desktop\homework\liri-node-app\liri spotify-this-song
+
+node liri.js spotify-this-song
+
 
 --------------------------------------------------------------
 
@@ -17,3 +21,28 @@ Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
 Album  : The Sign (US Album) [Remastered]
 
 --------------------------------------------------------------
+
+node liri.js spotify-this-song
+
+
+--------------------------------------------------------------
+
+Artist : Ace of Base
+Title  : The Sign
+Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+Album  : The Sign (US Album) [Remastered]
+
+--------------------------------------------------------------
+
+node liri.js spotify-this-song
+
+
+--------------------------------------------------------------
+
+Artist : Ace of Base
+Title  : The Sign
+Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+Album  : The Sign (US Album) [Remastered]
+
+--------------------------------------------------------------
+
