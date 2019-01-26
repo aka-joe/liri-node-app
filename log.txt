@@ -1,48 +1,9 @@
-node liri.js spotify-this-song
+node liri.js do-what-it-says
 
-
---------------------------------------------------------------
-
-Artist : Ace of Base
-Title  : The Sign
-Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
-Album  : The Sign (US Album) [Remastered]
+[32mARTIST  : [0mBackstreet Boys
+[32mTITLE   : [0mI Want It That Way
+[32mPREVIEW : [0mhttps://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+[32mALBUM   : [0mThe Hits--Chapter One[32m
 
 --------------------------------------------------------------
-
-node liri.js spotify-this-song
-
-
---------------------------------------------------------------
-
-Artist : Ace of Base
-Title  : The Sign
-Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
-Album  : The Sign (US Album) [Remastered]
-
---------------------------------------------------------------
-
-node liri.js spotify-this-song
-
-
---------------------------------------------------------------
-
-Artist : Ace of Base
-Title  : The Sign
-Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
-Album  : The Sign (US Album) [Remastered]
-
---------------------------------------------------------------
-
-node liri.js spotify-this-song
-
-
---------------------------------------------------------------
-
-Artist : Ace of Base
-Title  : The Sign
-Preview: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
-Album  : The Sign (US Album) [Remastered]
-
---------------------------------------------------------------
-
+[0m[0m
