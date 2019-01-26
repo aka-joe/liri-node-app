@@ -13,7 +13,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 * **do-what-it-says** : Read 'random.txt' file, then do what it says!
 
 
-### Preview
+### Preview Screenshot
 
 ![Alt text](./tty.gif)
 
