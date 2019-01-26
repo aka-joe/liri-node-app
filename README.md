@@ -7,10 +7,10 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ### LIRI Bot Command Lists
 
-* concert-this
-* spotify-this-song
-* movie-this
-* do-what-it-says
+* **concert-this** *(artist or band name here)* : Search the concert of event of this artist or band
+* **spotify-this-song** *(song title here)* : Search and show information about this song
+* **movie-this** *(movie title here)* : Search and show information about this movie
+* **do-what-it-says** : Read 'random.txt' file, then do what it says!
 
 
 ### Preview
