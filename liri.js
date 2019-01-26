@@ -13,17 +13,19 @@ var red = "\x1b[31m";
 var green = "\x1b[32m";
 var blue = "\x1b[34m";
 var reset = "\x1b[0m";
-var divider = "\n\n--------------------------------------------------------------\n" + reset;
+var divider = "\n--------------------------------------------------------------\n";
 
 
 // User Input
-var cmd = process.argv[2].toLowerCase();
+var cmd = process.argv[2];
 var term = process.argv.slice(3).join(" ");
-checkCommand(cmd);
+checkCommand();
 
 // Check user input
-function checkCommand(x) {
-    switch (x) {
+function checkCommand() {
+    if (cmd) { cmd = cmd.toLowerCase() };
+
+    switch (cmd) {
         case "concert-this":
             concertThis();
             break;
@@ -37,7 +39,11 @@ function checkCommand(x) {
             doWhat();
             break;
         default:
-            console.log("\nPlease enter one of these commands:\n\nspotify-this-song\nmovie-this\ndo-what-it-says");
+            console.log(divider + "PLEASE ENTER ONE OF THESE COMMANDS:\n"
+                + red + "\nconcert-this"
+                + green + "\nspotify-this-song"
+                + blue + "\nmovie-this"
+                + reset + "\ndo-what-it-says" + divider);
     };
 };
 
@@ -54,17 +60,25 @@ function concertThis() {
         .then(function (response) {
             if (typeof response !== 'undefined') {
                 var data = response.data.events[0];
-                var result = [
+
+                // Use MOMENT to set format of date
+                var when = moment(data.datetime_local).format('LLLL');
+
+                var result1 = "node liri.js " + process.argv.slice(2).join(" ") + "\n\n" + [
+                    "TITLE : " + data.title,
+                    "WHERE : " + data.venue.address + ", " + data.venue.extended_address,
+                    "WHEN  : " + when
+                ].join("\n");
+                var result2 = red + divider + reset + [
                     red + "TITLE : " + reset + data.title,
                     red + "WHERE : " + reset + data.venue.address + ", " + data.venue.extended_address,
-
-                    // Use MOMENT to set format of date
-                    red + "WHEN  : " + reset + moment(data.datetime_local).format('LLLL')
+                    red + "WHEN  : " + reset + when
                 ].join("\n") + red + divider + reset;
             } else {
-                var result = "Couldn't find any event. Please try again..." + red + divider + reset;
+                var result1 = "Couldn't find any event. Please try again...";
+                var result2 = red + divider + reset + result1 + red + divider + reset;
             };
-            logTXT(result , red);
+            logTXT(result1, result2);
         })
         .catch(function (err) {
             console.error(err);
@@ -90,16 +104,23 @@ function spotifyThisSong() {
         var dataResult = data.tracks.items[0];
 
         if (typeof dataResult !== 'undefined') {
-            var result = [
+            var result1 = "node liri.js " + process.argv.slice(2).join(" ") + "\n\n" + [
+                "ARTIST  : " + dataResult.album.artists[0].name,
+                "TITLE   : " + dataResult.name,
+                "PREVIEW : " + dataResult.external_urls.spotify,
+                "ALBUM   : " + dataResult.album.name
+            ].join("\n");
+            var result2 = green + divider + reset + [
                 green + "ARTIST  : " + reset + dataResult.album.artists[0].name,
                 green + "TITLE   : " + reset + dataResult.name,
                 green + "PREVIEW : " + reset + dataResult.external_urls.spotify,
                 green + "ALBUM   : " + reset + dataResult.album.name
             ].join("\n") + green + divider + reset;
         } else {
-            var result = "Couldn't find any song. Please try again..." + green + divider + reset;
+            var result1 = "Couldn't find any song. Please try again...";
+            var result2 = green + divider + reset + result1 + green + divider + reset;
         };
-        logTXT(result, green);
+        logTXT(result1, result2);
     });
 };
 
@@ -115,7 +136,17 @@ function movieThis() {
     axios.get(URL)
         .then(function (response) {
             if (response != false) {
-                var result = [
+                var result1 = "node liri.js " + process.argv.slice(2).join(" ") + "\n\n" + [
+                    "TITLE   : " + response.data.Title,
+                    "YEAR    : " + response.data.Year,
+                    "COUNTRY : " + response.data.Country,
+                    "LANGUAGE: " + response.data.Language,
+                    "ACTORS  : " + response.data.Actors,
+                    "PLOT    : " + response.data.Plot,
+                    "INTERNET MOVIE DB RATING: " + response.data.Ratings[0].Value,
+                    "ROTTEN TOMATOES RATING  : " + response.data.Ratings[1].Value
+                ].join("\n");
+                var result2 = blue + divider + reset + [
                     blue + "TITLE   : " + reset + response.data.Title,
                     blue + "YEAR    : " + reset + response.data.Year,
                     blue + "COUNTRY : " + reset + response.data.Country,
@@ -126,9 +157,10 @@ function movieThis() {
                     blue + "ROTTEN TOMATOES RATING  : " + reset + response.data.Ratings[1].Value
                 ].join("\n") + blue + divider + reset;
             } else {
-                var result = "Couldn't find any movie. Please try again..." + blue + divider + reset;
+                var result1 = "Couldn't find any movie. Please try again...";
+                var result2 = blue + divider + reset + result1 + blue + divider + reset;
             };
-            logTXT(result, blue);
+            logTXT(result1, result2);
         })
         .catch(function (err) {
             console.error(err);
@@ -141,17 +173,17 @@ function doWhat() {
         if (err) throw err;
 
         var data = data.split(",");
-        cmd = data[0].toLowerCase();
+        cmd = data[0];
         term = data.slice(1).join(" ");
 
-        checkCommand(cmd);
+        checkCommand();
     });
 };
 
 // Console log output and append to Log.txt
-function logTXT(result, color) {
-    fs.appendFile("log.txt", `node liri.js ${process.argv.slice(2).join(" ")}\n\n${result}\n`, function (err) {
+function logTXT(result1, result2) {
+    fs.appendFile("log.txt", `${result1}\n${divider}\n`, function (err) {
         if (err) throw err;
-        console.log(`${color}${divider}${reset}\n${result}`);
+        console.log(result2);
     });
 };

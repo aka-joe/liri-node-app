@@ -1,9 +1,69 @@
-node liri.js do-what-it-says
+node liri.js concert-this
 
-[32mARTIST  : [0mBackstreet Boys
-[32mTITLE   : [0mI Want It That Way
-[32mPREVIEW : [0mhttps://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
-[32mALBUM   : [0mThe Hits--Chapter One[32m
+TITLE : Chris Tomlin
+WHERE : 625 West James Street, Kent, WA 98032
+WHEN  : Thursday, March 7, 2019 7:00 PM
 
 --------------------------------------------------------------
-[0m[0m
+
+node liri.js concert-this linkin park
+
+TITLE : In The End - Tribute to Linkin Park
+WHERE : 1888 E. Thompson Blvd., Ventura, CA 93001
+WHEN  : Saturday, March 2, 2019 9:30 PM
+
+--------------------------------------------------------------
+
+node liri.js spotify-this-song
+
+ARTIST  : Ace of Base
+TITLE   : The Sign
+PREVIEW : https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+ALBUM   : The Sign (US Album) [Remastered]
+
+--------------------------------------------------------------
+
+node liri.js spotify-this-song Billie Jean
+
+ARTIST  : Michael Jackson
+TITLE   : Billie Jean
+PREVIEW : https://open.spotify.com/track/5ChkMS8OtdzJeqyybCc9R5
+ALBUM   : Thriller 25 Super Deluxe Edition
+
+--------------------------------------------------------------
+
+node liri.js movie-this
+
+TITLE   : Mr. Nobody
+YEAR    : 2009
+COUNTRY : Belgium, Germany, Canada, France, USA, UK
+LANGUAGE: English, Mohawk
+ACTORS  : Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+PLOT    : A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+INTERNET MOVIE DB RATING: 7.9/10
+ROTTEN TOMATOES RATING  : 67%
+
+--------------------------------------------------------------
+
+node liri.js movie-this star wars
+
+TITLE   : Star Wars: Episode IV - A New Hope
+YEAR    : 1977
+COUNTRY : USA
+LANGUAGE: English
+ACTORS  : Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing
+PLOT    : Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.
+INTERNET MOVIE DB RATING: 8.6/10
+ROTTEN TOMATOES RATING  : 93%
+
+--------------------------------------------------------------
+
+node liri.js do-what-it-says
+
+ARTIST  : Backstreet Boys
+TITLE   : I Want It That Way
+PREVIEW : https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+ALBUM   : The Hits--Chapter One
+
+--------------------------------------------------------------
+
